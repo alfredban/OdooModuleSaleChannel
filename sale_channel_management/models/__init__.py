@@ -1,1 +1,1 @@
-from . import sale_chanel 
+from . import sale_channel 

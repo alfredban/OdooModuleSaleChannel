@@ -1,5 +1,5 @@
 {
-    'name': 'chanel Sale Managment',
+    'name': 'channel Sale Managment',
     'version': '1.0',
     'author': 'Ramiro, Alfredo, Manu',
     'category': 'Sales',
