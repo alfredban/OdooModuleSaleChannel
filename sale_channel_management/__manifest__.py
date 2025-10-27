@@ -11,6 +11,7 @@
     'data': [
         'views/sale_channel_views.xml',
         'views/sale_channel_menu.xml',
+        'security/ir.model.access.csv',
     ],          
     'installable': True,  
     'application': True,  # para que aparezca en Apps

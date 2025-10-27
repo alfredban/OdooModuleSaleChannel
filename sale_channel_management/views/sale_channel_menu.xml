@@ -4,12 +4,11 @@
         <record id="action_sale_channel" model="ir.actions.act_window">
             <field name="name">Sales channels</field>
             <field name="res_model">sale.channel</field> <!-- modelo al que responde -->
-            <field name="view_mode">tree,form</field> <!-- accion a realizar -->
-            <field name="view_id" ref="view_sale_channel_tree"/>
+            <field name="view_mode">list,form</field> <!-- accion a realizar -->
         </record>
     
          <menuitem id ='menu_sale_channel_root'
-              name ="Sale channels"
+              name ="Sales channels"
               parent ="sale.menu_sale_config"
               action="action_sale_channel"
               sequence="10"/>

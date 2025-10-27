@@ -1,27 +1,34 @@
-<odoo>
-    <record id="view_sale_channel_tree" model="ir.ui.view">
-        <field name="name">sale.channel.tree</field>
+<?xml version="1.0" encoding="UTF-8"?>
+ <odoo>
+
+
+    <record id="view_sale_channel_list" model="ir.ui.view">
+        <field name="name">sale.channel.list</field>
         <field name="model">sale.channel</field>
-        <field name="type">tree</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name"/>
-            </tree>
+                <field name="code"/>
+            </list>
         </field>
     </record>
 
     <record id="view_sale_channel_form" model="ir.ui.view">
         <field name="name">sale.channel.form</field>
         <field name="model">sale.channel</field>
-        <field name="type">form</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
                     <group>
-                        <field name="name"/>
+                        <field name="name"/>     
+                        <field name="code"/>
+                        <field name="warehouse_id"/>
+                        <field name="invoice_journal_id"/>
                     </group>
                 </sheet>
             </form>
         </field>
-    </record>
+    </record> 
+
+    
 </odoo>
