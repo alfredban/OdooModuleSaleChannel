@@ -10,11 +10,11 @@ class SaleChannel(models.Model):
      #Relaciones
 
 
-    wharehouse_id = fields.Many2one( #Relacion con el deposito 
+    warehouse_id = fields.Many2one( #Relacion con el deposito 
          comodel_name ='stock.warehouse', 
          string ='Deposit', required = True, 
     ) 
     invoice_journal_id = fields.Many2one( 
         comodel_name = 'account.journal', #Relacion con el diario de facturacion de cada canal 
-        String = 'Invoice journal', required = True, 
+        string = 'Invoice journal', required = True, 
     )
