@@ -7,9 +7,9 @@ class SaleChannel(models.Model):
 
     name = fields.Char(string='name', required = True) 
     code = fields.Integer(string="code", required = True) 
-     #Relaciones
-
-
+    
+    
+    #Relaciones
     warehouse_id = fields.Many2one( #Relacion con el deposito 
          comodel_name ='stock.warehouse', 
          string ='Deposit', required = True, 
@@ -18,3 +18,5 @@ class SaleChannel(models.Model):
         comodel_name = 'account.journal', #Relacion con el diario de facturacion de cada canal 
         string = 'Invoice journal', required = True, 
     )
+    
+    

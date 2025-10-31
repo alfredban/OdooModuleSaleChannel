@@ -9,9 +9,11 @@
         'stock',
         'account'],
     'data': [
+        'security/ir.model.access.csv',
         'views/sale_channel_views.xml',
         'views/sale_channel_menu.xml',
-        'security/ir.model.access.csv',
+        'views/sale_order_views.xml',
+
     ],          
     'installable': True,  
     'application': True,  # para que aparezca en Apps
