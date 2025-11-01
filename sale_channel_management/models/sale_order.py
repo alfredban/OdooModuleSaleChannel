@@ -17,3 +17,13 @@ class SaleOrder(models.Model):
             self.warehouse_id = self.sale_channel_id.warehouse_id
         else:
             self.warehouse_id = False
+            
+            
+    #----- SOBREESCRITURA DE METODOS ------#
+
+    def _prepare_invoice(self):
+        invoice_vals = super(SaleOrder, self)._prepare_invoice()
+        if self.sale_channel_id:
+            invoice_vals['sale_channel_id'] = self.sale_channel_id.id
+            invoice_vals['journal_id'] = self.sale_channel_id.invoice_journal_id.id
+        return invoice_vals
