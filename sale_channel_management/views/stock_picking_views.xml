@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="stock_picking_view_search_inherit_channel" model="ir.ui.view">
+                <field name="name">stock.picking.search.inherit.channel</field>
+                <field name="model">stock.picking</field>
+                <field name="mode">extension</field>
+                <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+                <field name="arch" type="xml">
+
+                    <field name="name" position="before">
+                        
+                        <field name="sale_channel_id"/>
+                        <separator/>
+                
+                    </field>
+
+
+                    <filter name="picking_type" position="after">
+
+                        <separator/>
+                        <filter string="Sale Channel"
+                                name="groupby_sale_channel"
+                                domain="[]"
+                                context="{'group_by': 'sale_channel_id'}"/>
+                    </filter>
+                </field>
+            </record>
+
+        <record id="view_stock_picking_form_inherit_channel" model="ir.ui.view">
+            <field name="name">stock.picking.form.inherit.channel</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+
+
+                <xpath expr="//sheet/group[1]" position="inside">
+                    <group name="sale_channel_detail">
+                        <field name="sale_channel_id"/>
+                    </group>
+
+                </xpath>
+                
+                
+            </field>
+        </record>
+    </data>
+</odoo>

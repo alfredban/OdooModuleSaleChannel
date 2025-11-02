@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="sale_order_view_search_inherit_channel" model="ir.ui.view">
+            <field name="name">sale.order.search.inherit.channel</field>
+            <field name="model">sale.order</field>
+            <field name="mode">extension</field>
+            <field name="inherit_id" ref="sale.sale_order_view_search_inherit_sale"/>
+            
+            <field name="arch" type="xml">
+
+                <filter name="upselling" position="after">
+                    
+                    <field name="sale_channel_id"/>
+                    <separator/>
+            
+                </filter>
+
+
+                <filter name="order_date" position="after">
+
+                    <separator/>
+                    <filter string="Sale Channel"
+                            name="groupby_sale_channel"
+                            domain="[]"
+                            context="{'group_by': 'sale_channel_id'}"/>
+                </filter>
+            </field>
+        </record>
+        
+        
+        
+        <record id="view_order_form_inherit_channel" model="ir.ui.view">
+            <field name="name">sale.order.form.inherit.channel</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+
+
+                <xpath expr="//group[@name='sale_header']" position="inside">
+                    <group name="sale_channel_detail">
+                        <field name="sale_channel_id"/>
+                    </group>
+
+                </xpath>
+                
+                
+            </field>
+        </record>
+    </data>
+
+</odoo>
