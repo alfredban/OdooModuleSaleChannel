@@ -20,4 +20,10 @@ class SaleChannel(models.Model):
         string = 'Invoice journal', required = True, 
     )
     
-    
+    _sql_constraints = [
+        (
+            'sale_channel_code_unique',
+            'unique(code)',
+            'El código del canal de venta debe ser único.'
+        )
+    ]

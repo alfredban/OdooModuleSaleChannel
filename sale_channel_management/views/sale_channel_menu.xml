@@ -13,4 +13,16 @@
               action="action_sale_channel"
               sequence="10"/>
 
+        <record id="action_credit_group_channel" model="ir.actions.act_window">
+            <field name="name">Credit groups</field>
+            <field name="res_model">credit.group</field> <!-- modelo al que responde -->
+            <field name="view_mode">list,form</field> <!-- accion a realizar -->
+        </record>
+    
+         <menuitem id ='menu_credit_group_root'
+              name ="Credit groups"
+              parent ="sale.menu_sale_config"
+              action="action_credit_group_channel"
+              sequence="10"/>
+
 </odoo>

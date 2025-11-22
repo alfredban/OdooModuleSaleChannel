@@ -10,6 +10,7 @@
         'account'],
     'data': [
         'security/ir.model.access.csv',
+        'views/res_partner_views.xml',
         'views/sale_channel_views.xml',
         'views/sale_channel_menu.xml',
         'views/sale_order_views.xml',
